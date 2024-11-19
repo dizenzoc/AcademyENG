@@ -15,16 +15,9 @@ public class SistemaPrenotazione {
         int colonne = 8; 
         
         // Inizializzazione della matrice
-        for (int i = 0; i < righe; i++) {
-            ArrayList<String> riga = new ArrayList<>();
-            for (int j = 0; j < colonne; j++) {
-                riga.add("libero"); // Inzializzo tutto a 0 (indica posto libero)
-            }
-            prenotazioni.add(riga);
-        }
+        prenotazioni = initMatrix(righe, colonne);
 
         boolean menu = true;
-
         while (menu) {
             // Creo un menu per le funzionalita'
             System.out.println("\nMENU PRENOTAZIONE");
@@ -116,5 +109,17 @@ public class SistemaPrenotazione {
 
         scInt.close();
         scStr.close();
+    }
+
+    private static ArrayList<ArrayList<String>> initMatrix(int righe, int colonne){
+        ArrayList<ArrayList<String>> p = new ArrayList<>(); //prenotazioni
+        for (int i = 0; i < righe; i++) {
+            ArrayList<String> riga = new ArrayList<>();
+            for (int j = 0; j < colonne; j++) {
+                riga.add("libero"); // Inzializzo tutto a 0 (indica posto libero)
+            }
+            p.add(riga);
+        }
+        return p;
     }
 }
