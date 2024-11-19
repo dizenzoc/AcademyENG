@@ -39,17 +39,15 @@ public class SistemaPrenotazione {
                     System.out.print("Inserisci numero colonna (0-"+(colonne-1)+"):");
                     int c = scInt.nextInt(); //colonna
                     scInt.nextLine();
-
                     //controllo se e' un posto esistente
-                    if (r >= righe && r < 0 || c >= colonne && c < 0) {
+                    if (postoInesistente(r,c,righe,colonne)==1) {
                         System.out.println("Posto inesistente!");
                         break;
                     }
-                    else if(prenotazioni.get(r).get(c).equalsIgnoreCase("libero")){ //se il posto e' libero allora inserisco la prenotazione
+                    else if(postoLibero(prenotazioni, r, c)==1){ //se il posto e' libero allora inserisco la prenotazione
                         System.out.print("Inserisci il nome del cliente: ");
                         String nomeCliente = scStr.nextLine();
-                        // Modifica di un valore specifico
-                        prenotazioni.get(r).set(c, nomeCliente);
+                        assegnaPosto(prenotazioni, r, c, nomeCliente);// Modifica di un valore specifico
                         System.out.println("Posto prenotato con successo!");
                     }
                     else{ //se il posto e' occupato allora comunico che il posto e' gia' occupato
@@ -60,46 +58,28 @@ public class SistemaPrenotazione {
                 case 2: // Cerca prenotazioni per nome
                     System.out.print("Inserisci nome cliente da cercare: ");
                     String nomeDaCercare = scStr.nextLine();
-                    boolean esiste = false;
-
-                    // Ricerca del nome nelle prenotazioni
-                    for (int i = 0; i < prenotazioni.size(); i++) {
-                        for (int j = 0; j < prenotazioni.get(i).size(); j++) {
-                            if (prenotazioni.get(i).get(j).equalsIgnoreCase(nomeDaCercare)) {
-                                System.out.println("Prenotazione di " + nomeDaCercare + " trovata alla posizione ("+ i + ", " + j + ")");
-                                esiste = true;
-                                break;
-                            }
-                        }
-                    }
-                    if (!esiste) {
-                            System.out.println("Nessuna prenotazione trovata per " + nomeDaCercare);
-                        }
+                    
+                    if(cercaPerNome(prenotazioni, righe, colonne, nomeDaCercare)==0)
+                        System.out.println("Nessuna prenotazione trovata per " + nomeDaCercare);
+                    
                     break;
 
                 case 3: //Visualizza posti disponibili e prenotati
-                    // Stampa delle prenotazioni
-                    // Stampa degli indici delle colonne
-                    System.out.print("    ");
-                    for (int j = 0; j < prenotazioni.get(0).size(); j++) {
-                        System.out.printf("%-10d", j);
-                    }
-                    System.out.println();
-                    for (int i = 0; i < prenotazioni.size(); i++) {
-                        System.out.printf("%-4d", i);
-                        for (int j = 0; j < prenotazioni.get(i).size(); j++) {
-                            System.out.printf("%-10s", prenotazioni.get(i).get(j));
-                        }
-                        System.out.println();
-                    }
+                    stampaPrenotazioni(prenotazioni);// Stampa delle prenotazioni
                     break;
 
                 case 4: //Visualizza report sui posti
+                    int postiTotali = righe * colonne;
+                    int postiOccupati = numeroPostiOccupati(prenotazioni);
+                    System.out.println(postiOccupati + " e " +postiTotali);
+                    float percentualePostiOccupati = ((float) postiOccupati / postiTotali) * 100;
+                    float percentualePostiLiberi = ((float) (postiTotali - postiOccupati) / postiTotali) * 100;
+                    System.out.println("La percentuale di posti occupati e\': " + percentualePostiOccupati + " %, mentre la percentuale di posti liberi e\': " + percentualePostiLiberi + " %");
                     break;
 
                 case 5: //Uscita
                     menu = false;
-                    System.out.println("Sistema chiuso correttamente!");
+                    System.out.println("Sistema chiuso correttamente! Grazie per averci scelto.");
                     break;
 
                 default:
@@ -111,15 +91,81 @@ public class SistemaPrenotazione {
         scStr.close();
     }
 
-    private static ArrayList<ArrayList<String>> initMatrix(int righe, int colonne){
-        ArrayList<ArrayList<String>> p = new ArrayList<>(); //prenotazioni
+    private static ArrayList<ArrayList<String>> initMatrix(int righe, int colonne) {
+        ArrayList<ArrayList<String>> p = new ArrayList<>(); // prenotazioni
         for (int i = 0; i < righe; i++) {
             ArrayList<String> riga = new ArrayList<>();
             for (int j = 0; j < colonne; j++) {
-                riga.add("libero"); // Inzializzo tutto a 0 (indica posto libero)
+                riga.add("libero"); // Inizializzo tutto a "libero"
             }
             p.add(riga);
         }
         return p;
+    }
+    
+    private static int postoInesistente(int r, int c, int righe, int colonne) {
+        if (r >= righe || r < 0 || c >= colonne || c < 0) {
+            return 1;
+        }
+        return 0;
+    }
+    
+    private static int postoLibero(ArrayList<ArrayList<String>> p, int r, int c) {
+        if (r >= 0 && r < p.size() && c >= 0 && c < p.get(r).size()) {
+            if (p.get(r).get(c).equalsIgnoreCase("libero")) {
+                return 1;
+            }
+        }
+        return 0;
+    }
+    
+    private static void assegnaPosto(ArrayList<ArrayList<String>> p, int r, int c, String str) {
+        if (r >= 0 && r < p.size() && c >= 0 && c < p.get(r).size()) {
+            p.get(r).set(c, str);
+        } else {
+            System.out.println("Errore: Indice fuori dai limiti.");
+        }
+    }
+    
+    private static int cercaPerNome(ArrayList<ArrayList<String>> prenotazioni, int r, int c, String nomeDaCercare){
+        for (int i = 0; i < prenotazioni.size(); i++) {
+            for (int j = 0; j < prenotazioni.get(i).size(); j++) {
+                if (prenotazioni.get(i).get(j).equalsIgnoreCase(nomeDaCercare)) {
+                    System.out.println("Prenotazione di " + nomeDaCercare + " trovata alla posizione ("+ i + ", " + j + ")");
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+
+    private static void stampaPrenotazioni(ArrayList<ArrayList<String>> prenotazioni){
+        // Stampa degli indici delle colonne
+        System.out.print("    ");
+        for (int j = 0; j < prenotazioni.get(0).size(); j++) {
+            System.out.printf("%-10d", j);
+        }
+        System.out.println();
+        for (int i = 0; i < prenotazioni.size(); i++) {
+            System.out.printf("%-4d", i);
+            for (int j = 0; j < prenotazioni.get(i).size(); j++) {
+                System.out.printf("%-10s", prenotazioni.get(i).get(j));
+            }
+            System.out.println();
+        }
+    }
+
+    private static int numeroPostiOccupati(ArrayList<ArrayList<String>> prenotazioni){
+        if(prenotazioni.size()==0)
+            return 0;
+        int posti = 0;
+        for (int i = 0; i < prenotazioni.size(); i++) {
+            for (int j = 0; j < prenotazioni.get(i).size(); j++) {
+                if (!prenotazioni.get(i).get(j).equalsIgnoreCase("libero")) {
+                    posti+=1;
+                }
+            }
+        }
+        return posti;
     }
 }
