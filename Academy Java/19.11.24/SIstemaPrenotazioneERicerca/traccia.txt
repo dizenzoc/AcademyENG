@@ -1,0 +1,10 @@
+Utilizzare un ArrayList per memorizzare le prenotazioni, dove ogni prenotazione è rappresentata da almeno:
+    - Nome del cliente.
+    - Riga e colonna del posto prenotato.
+
+Il sistema deve fornire le stesse funzionalità:
+    - Prenotare un posto specifico (3 file da 8 posti).
+    - Cercare prenotazioni per nome / attributo.
+    - Visualizzare tutti i posti disponibili e prenotati.
+    - Creare un report abbinando i posti totali ai posti prenotati.
+    - Poter Chiudere il ciclo.
