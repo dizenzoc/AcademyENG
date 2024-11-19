@@ -1,0 +1,24 @@
+Una ditta di spedizioni vuole gestire le spedizioni di penne. 
+
+Ogni spedizione contiene una certa quantità di penne di diversi colori.
+
+La ditta ha bisogno di un sistema che consenta di:
+
+TASK ESPLORATIVA: Far generare autonomamente il tipo e il numero di penne
+venduto al giorno e gestire anche il timing.
+
+Aggiungere una spedizione: Ogni spedizione è composta da una riga di dati
+che contiene la quantità di penne per ogni colore. I colori disponibili sono
+Rosso, Blu, Verde, Nero
+
+Visualizzare tutte le spedizioni: Mostrare la quantità di penne per ciascun
+colore in ogni spedizione.
+
+Calcolare il totale di penne di ogni colore: Il sistema deve poter calcolare
+quanti penne di ogni colore sono stati spediti in totale.
+
+Ricerca per colore: Cercare una spedizione che abbia almeno una penna di
+un determinato colore.
+
+E necessario usare minimo cicli, condizioni, metodi e ArrayList o matrici per
+implementare il sistema.
