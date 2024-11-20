@@ -6,17 +6,17 @@ import java.util.ArrayList;
 public class TestChef {
     public static void main(String[] args) {
         // dichiaro gli ingredienti per nazionalita'
-        List<String> ingredientiItaliani = new ArrayList<>();
+        ArrayList<String> ingredientiItaliani = new ArrayList<>();
         ingredientiItaliani.add("pasta");
         ingredientiItaliani.add("pomodoro");
         ingredientiItaliani.add("formaggio");
 
-        List<String> ingredientiGiapponesi = new ArrayList<>();
+        ArrayList<String> ingredientiGiapponesi = new ArrayList<>();
         ingredientiGiapponesi.add("riso");
         ingredientiGiapponesi.add("pesce");
         ingredientiGiapponesi.add("alghe");
 
-        List<String> ingredientiFrancesi = new ArrayList<>();
+        ArrayList<String> ingredientiFrancesi = new ArrayList<>();
         ingredientiFrancesi.add("pane");
         ingredientiFrancesi.add("formaggio");
         ingredientiFrancesi.add("patate");
