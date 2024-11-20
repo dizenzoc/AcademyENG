@@ -1,17 +1,20 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-class Squadra {
+public class Squadra {
     final int numeroCalciatori = 12;
 
     String nomeSquadra;
     ArrayList<Calciatore> calciatori;
+    int punti;
+
     String[] nomi = {"GiocatoreA", "GiocatoreB", "GiocatoreC", "GiocatoreD", "GiocatoreE", "GiocatoreF", "GiocatoreG", "GiocatoreH", "GiocatoreI", "GiocatoreJ", "GiocatoreK", "GiocatoreL"};
     String[] ruoli = {"Portiere", "Difensore", "Centrocampista", "Attaccante"};
 
     Squadra(String nomeSquadra) {
         this.nomeSquadra = nomeSquadra;
         this.calciatori = new ArrayList<>();
+        this. punti = 0;
     }
 
     void aggiungiCalciatore(Calciatore calciatore) {

@@ -1,4 +1,4 @@
-class Calciatore {
+public class Calciatore {
     String nome;
     String ruolo;
 
