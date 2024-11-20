@@ -1,4 +1,10 @@
-public class Campionato {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Campionato {
+
+    final int numeroSquadre = 10;
     
     String nomeCampionato;
     ArrayList<Squadra> squadre;
@@ -6,7 +12,7 @@ public class Campionato {
     Campionato(String nomeCampionato) {
         this.nomeCampionato = nomeCampionato;
         squadre = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= numeroSquadre; i++) {
             Squadra squadra = new Squadra("Squadra " + i);
             squadra.generaGiocatori();
             squadre.add(squadra);
