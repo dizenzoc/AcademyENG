@@ -2,6 +2,7 @@ package SpedizionePenne;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class SpedizionePenne {
@@ -13,7 +14,9 @@ public class SpedizionePenne {
         // Lista di prenotazioni
         ArrayList<ArrayList<String>> spedizioni = new ArrayList<>();
         
-        ArrayList<String> intestazioni = definisciIntestazioni(colonne, "id_spedizione", "penne_nere", "penne_rosse", "penne_blu", "penne_verdi");     
+        String[] array_intestazioni = {"id_spedizione", "penne_nere", "penne_rosse", "penne_blu", "penne_verdi"};
+        ArrayList<String> intestazioni = definisciIntestazioni(colonne, array_intestazioni);     
+        
         spedizioni.add(intestazioni);// aggiungo le intestazioni come prima riga della matrice
 
         boolean menu = true;
@@ -28,15 +31,18 @@ public class SpedizionePenne {
                     nuovaSpedizione(spedizioni);
                     break;
                 case 2:
-                    stampaSpedizioni(spedizioni);
+                    nuovaSpedizioneRandom(spedizioni);
                     break;
                 case 3:
-                    stampaTotalePennePerColore(spedizioni);
+                    stampaSpedizioni(spedizioni);
                     break;
                 case 4:
-                    cercaSpedizionePerColore(spedizioni);
+                    stampaTotalePennePerColore(spedizioni);
                     break;
                 case 5:
+                    cercaSpedizionePerColore(spedizioni);
+                    break;
+                case 6:
                     menu = esciDalMenu();
                     break;
                 default:
@@ -47,15 +53,14 @@ public class SpedizionePenne {
         scInt.close();
     }
 
-    private static ArrayList<String> definisciIntestazioni(int colonne, String... intestazioni) {
+    private static ArrayList<String> definisciIntestazioni(int colonne, String[] intestazioni) {
         ArrayList<String> listaIntestazioni = new ArrayList<>(Arrays.asList(intestazioni)); // converto l'array di intestazioni in una lista
-        
         // mi assicuro che il numero di intestazioni corrisponda al numero di colonne
         if (listaIntestazioni.size() != colonne) { // Supponendo che il numero di colonne sia sempre 5
             System.out.println("Il numero di intestazioni deve essere uguale al numero di colonne.");
             System.exit(1); // Termina il programma con un codice di errore
         }
-
+    
         return listaIntestazioni;
     }
 
@@ -63,10 +68,11 @@ public class SpedizionePenne {
         // Creo un menu per le funzionalita'
         System.out.println("\nMENU SPEDIZIONI");
         System.out.println("1. Aggiungi spedizione.");
-        System.out.println("2. Visualizza tutte le spedizioni.");
-        System.out.println("3. Calcola totale di penne di ogni colore.");
-        System.out.println("4. Ricerca per colore.");
-        System.out.println("5. Esci dal menu.");
+        System.out.println("2. Aggiungi spedizione random.");
+        System.out.println("3. Visualizza tutte le spedizioni.");
+        System.out.println("4. Calcola totale di penne di ogni colore.");
+        System.out.println("5. Ricerca per colore.");
+        System.out.println("6. Esci dal menu.");
         System.out.print("\nScegli una funzione: ");
     }
 
@@ -84,8 +90,9 @@ public class SpedizionePenne {
         
         ArrayList<String> nuovaSpedizione = new ArrayList<>(); //dichiaro array per la nuova spedizione
 
-        System.out.print("Inserisci id_spedizione: ");
-        String idSpedizione = scanner.nextLine(); //chiedo input id spedizione
+        // System.out.print("Inserisci id_spedizione: ");
+        // String idSpedizione = scanner.nextLine(); //chiedo input id spedizione
+        String idSpedizione = String.valueOf(spedizioni.size()); //calcolo l' id in maniera automatica
         nuovaSpedizione.add(idSpedizione);
 
         System.out.print("Inserisci numero di penne nere: ");
@@ -106,6 +113,32 @@ public class SpedizionePenne {
 
         spedizioni.add(nuovaSpedizione); // aggiungo la nuova spedizione alla matrice
         System.out.println("Spedizione aggiunta con successo!");
+    }
+
+    public static void nuovaSpedizioneRandom(ArrayList<ArrayList<String>> spedizioni) {
+        Random rand = new Random();
+        ArrayList<String> nuovaSpedizione = new ArrayList<>();
+        nuovaSpedizione.add(String.valueOf(spedizioni.size())); // id_spedizione
+        boolean valid = true;
+    
+        for (int i = 1; i < spedizioni.get(0).size(); i++) {
+            if (rand.nextBoolean()) {// decido casualmente se ordinare questo colore di penne
+                int penne = rand.nextInt(200); // numero casuale tra 0 e 199
+                if (penne < 100) {
+                    valid = false; // se quantità è inferiore a 100, la spedizione non è valida
+                }
+                nuovaSpedizione.add(String.valueOf(penne));
+            } else {
+                nuovaSpedizione.add("0"); // nessuna penna ordinata per questo colore
+            }
+        }
+    
+        if (valid) {
+            spedizioni.add(nuovaSpedizione);// aggiungo la spedizione solo se tutte le quantità sono valide
+            System.out.println("Spedizione aggiunta con successo!");
+        } else {
+            System.out.println("Spedizione non aggiunta: almeno un colore ha una quantità inferiore a 100.");
+        }
     }
 
     private static void stampaSpedizioni(ArrayList<ArrayList<String>> spedizioni) {
