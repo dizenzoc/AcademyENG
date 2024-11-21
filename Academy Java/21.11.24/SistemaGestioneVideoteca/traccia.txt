@@ -1,0 +1,34 @@
+Esercizio: Sistema di Gestione Videoteca in Java
+
+Obiettivo: Sviluppare un'applicazione Java semplificata che consenta la gestione di una videoteca, focalizzandosi su film e utenti.
+
+Classi e Attributi
+
+Film
+Attributi:
+Titolo (String)
+Anno di uscita (int)
+Metodi:
+Costruttore: per inizializzare i nuovi film con titolo e anno.
+Getter e Setter: per ottenere e impostare i valori degli attributi.
+Utente
+Attributi:
+ID Utente (String)
+Nome (String)
+Lista dei Film Noleggiati (ArrayList<Film>)
+Metodi:
+Costruttore: per inizializzare i nuovi utenti con ID e nome.
+Noleggia Film(Film film): per aggiungere un film alla lista dei noleggi.
+Elenco Noleggi(): per stampare l'elenco dei film noleggiati dall'utente.
+Funzionalità Base
+
+Aggiunta e Rimozione di Film dalla Videoteca: L'applicazione dovrebbe consentire di aggiungere nuovi film alla collezione e rimuovere quelli desiderati.
+Gestione degli Utenti: Dovrebbe essere possibile aggiungere nuovi utenti e gestire i loro noleggi.
+Noleggio di Film: Gli utenti possono noleggiare film dalla videoteca. Questo aggiunge il film alla loro lista di noleggi.
+Implementazione
+
+Videoteca Class: Potresti considerare l'aggiunta di una classe Videoteca per gestire l'elenco dei film disponibili e degli utenti. Questa classe può contenere metodi per aggiungere o rimuovere film, registrare nuovi utenti e gestire i noleggi.
+Sfide Aggiuntive (Opzionale)
+
+Ricerca di Film: Aggiungi una funzionalità che permetta agli utenti di cercare un film per titolo o anno.
+Limiti di Noleggio: Implementa un controllo che limiti il numero di film che un utente può noleggiare contemporaneamente.
