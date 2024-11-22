@@ -11,6 +11,12 @@ public class Utente extends Ristorante {
         this.soldi = 0;
     }
 
+    public void stampaDati() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Email: " + email);
+        System.out.println("Soldi: " + soldi);
+    }
+
     private int randomizeSoldi() {
         Random rand = new Random();
         return rand.nextInt(100) + 1; // Genera un numero casuale tra 1 e 100

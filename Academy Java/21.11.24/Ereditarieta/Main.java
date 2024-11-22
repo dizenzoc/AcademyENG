@@ -53,7 +53,7 @@ public class Main {
 
             switch (operazione) {
                 case 1:
-                    stampaDati(utente);
+                    utente.stampaDati();
                     if (utente instanceof Chef) {
                         ((Chef) utente).stampaPiattiCreati();
                     } else if (utente instanceof Critico) {
@@ -105,12 +105,6 @@ public class Main {
             System.out.println("3. Valuta un piatto");
         }
         System.out.println("5. Esci");
-    }
-
-    private static void stampaDati(Utente utente) {
-        System.out.println("Nome: " + utente.nome);
-        System.out.println("Email: " + utente.email);
-        System.out.println("Soldi: " + utente.soldi);
     }
 
     private static void modificaDati(Scanner scanner, Utente utente) {
