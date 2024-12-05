@@ -1,0 +1,45 @@
+  /* home */
+  .home {
+    padding: 1.5rem;
+  }
+
+  a:link, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover, a:active {
+    text-decoration: none;
+  }
+
+  /* card */
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: inline-block;
+    max-width: 400px;
+    max-height: min-content;
+    min-width: min-content;
+  }
+
+  .container{
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  .img_book {
+    width: 40%;
+    /* aspect-ratio: 9 / 16; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem 1rem;
+  }

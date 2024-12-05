@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <style>
+        #myProgress {
+            width: 100%;
+            background-color: #f1f1f1;
+        }
+
+        .myBar {
+            width: 1%;
+            height: 30px;
+            background-color: green;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myProgress">
+        <div id="myBar0" class="myBar"></div>
+        <div id="myBar1" class="myBar"></div>
+        <div id="myBar2" class="myBar"></div>
+
+    </div>
+    <button onclick="start()">Corri</button>
+</body>
+
+<script>
+    function start() {
+        setTimeout(function () {
+            let number = getRandomInt(0, 2);
+
+            let elem = document.getElementById("myBar" + number);
+            let valuePerc = elem.style.width;
+            let value = valuePerc.replace("%", "");
+            value++;
+            elem.style.width = value + "%";
+            if( value < 100 )
+                start();
+            else
+                alert(" vince " + number)
+        }, 100);
+    }
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gioco della Corsa</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .track-container {
+      position: relative;
+      width: 100%;
+      height: 70px;
+      margin: 20px 0;
+      border: 2px solid #333;
+      border-radius: 10px;
+      background-color: #f3f3f3;
+    }
+    .runner {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Gioco della Corsa</h1>
+  <div class="track-container" id="track-0">
+    <img src="https://cdn.pixabay.com/animation/2022/10/21/07/21/07-21-50-511_512.gif" class="runner" id="runner-0" alt="Runner 1">
+  </div>
+  <div class="track-container" id="track-1">
+    <img src="https://cdn.pixabay.com/animation/2022/10/21/07/21/07-21-50-511_512.gif" class="runner" id="runner-1" alt="Runner 2">
+  </div>
+  <div class="track-container" id="track-2">
+    <img src="https://cdn.pixabay.com/animation/2022/10/21/07/21/07-21-50-511_512.gif" class="runner" id="runner-2" alt="Runner 3">
+  </div>
+  <button class="button" onclick="startRace()">Corri</button>
+  <h2 id="vincitore" style="color: red; margin-top: 20px;"></h2>
+</div>
+
+<script>
+  const runnerPositions = [0, 0, 0];
+  let giocoInCorso = true;
+  let interval;
+  const trackWidth = document.getElementById("track-0").offsetWidth - 50; // Larghezza della pista meno la larghezza del runner
+
+  function startRace() {
+    if (!giocoInCorso) return;
+
+    interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * 3);
+      runnerPositions[randomIndex] += 1;
+
+      const runner = document.getElementById(`runner-${randomIndex}`);
+      runner.style.left = runnerPositions[randomIndex] + "%";
+
+      // Controlla se un runner ha raggiunto il 100%
+      if (runner.offsetLeft >= trackWidth) {
+        document.getElementById("vincitore").textContent = `Il Runner ${randomIndex + 1} ha vinto!`;
+        giocoInCorso = false;
+        clearInterval(interval); // Ferma la gara
+      }
+    }, 100); // Incrementa ogni 100 millisecondi
+  }
+</script>
+
+</body>
+</html>

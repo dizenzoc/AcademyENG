@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>Run Progress Bar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="w3-container">
+
+        <h2>Corsa delle Progress Bar</h2>
+               
+        <div class="progressbar-container">
+            <div id="bar1" class="pb w3-container w3-green w3-padding" style="width:0%">0%</div>
+
+            <div id="bar2" class="pb w3-container w3-red w3-padding" style="width:0%">0%</div>
+
+            <div id="bar3" class="pb w3-container w3-blue w3-padding" style="width:0%">0%</div>
+        </div>
+        
+        <button class="bt w3-button w3-green" onclick="run()">Start Run</button> 
+        
+        <div id="res" class="result"></div>
+    </div>
+        
+        <script>
+            function run() {
+                setTimeout(function () {
+                    let num = Math.floor(Math.random()*3) + 1;
+
+                    let pb = document.getElementById("bar" + num);
+                    let w = pb.style.width;
+                    let val = w.replace("%", "");
+                    val++;
+
+                    pb.style.width = val + "%";
+                    pb.innerHTML = val * 1 + "%";
+                    
+                    if(val < 100){
+                        run();
+                    }
+                    else{
+                        document.getElementById("res").innerHTML = "Vince la progress bar " + num;
+                    }
+                }, 100);
+            }
+        </script>
+
+</body>
+</html>

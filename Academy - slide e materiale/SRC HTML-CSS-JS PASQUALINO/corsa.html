@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gioco della Corsa</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .progress-bar-container {
+      margin: 20px 0;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 25px;
+      background-color: #ddd;
+    }
+    .progress {
+      height: 100%;
+      background-color: #4caf50;
+      width: 0%;
+      text-align: center;
+      color: white;
+      line-height: 25px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Gioco della Corsa</h1>
+  <div id="progress-bar-0" class="progress-bar-container">
+    <div class="progress-bar">
+      <div class="progress" id="progress-0">0%</div>
+    </div>
+  </div>
+  <div id="progress-bar-1" class="progress-bar-container">
+    <div class="progress-bar">
+      <div class="progress" id="progress-1">0%</div>
+    </div>
+  </div>
+  <div id="progress-bar-2" class="progress-bar-container">
+    <div class="progress-bar">
+      <div class="progress" id="progress-2">0%</div>
+    </div>
+  </div>
+  <button class="button" onclick="startRace()">Corri</button>
+  <h2 id="vincitore" style="color: red; margin-top: 20px;"></h2>
+</div>
+
+<script>
+  const progressValues = [0, 0, 0];
+  let giocoInCorso = true;
+  let interval;
+
+  function startRace() {
+    if (!giocoInCorso) return;
+
+    interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * 3);
+      progressValues[randomIndex] += 1;
+
+      document.getElementById(`progress-${randomIndex}`).style.width = progressValues[randomIndex] + "%";
+      document.getElementById(`progress-${randomIndex}`).textContent = progressValues[randomIndex] + "%";
+
+      if (progressValues[randomIndex] >= 100) {
+        document.getElementById("vincitore").textContent = `La progress bar ${randomIndex + 1} ha vinto!`;
+        giocoInCorso = false;
+        clearInterval(interval); // Ferma la gara
+      }
+    }, 100); // Incrementa ogni 100 millisecondi
+  }
+</script>
+
+</body>
+</html>
