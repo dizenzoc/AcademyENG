@@ -1,0 +1,1 @@
+la cartella conf contiene la configurazione di alcuni microservizi. Pertanto bisogna inserirla in C:\Users\cdizenzo
