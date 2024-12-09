@@ -1,0 +1,14 @@
+/Users/federico/Documents/SecondoEsercizio/bin/Debug/net8.0/SecondoEsercizio
+/Users/federico/Documents/SecondoEsercizio/bin/Debug/net8.0/SecondoEsercizio.deps.json
+/Users/federico/Documents/SecondoEsercizio/bin/Debug/net8.0/SecondoEsercizio.runtimeconfig.json
+/Users/federico/Documents/SecondoEsercizio/bin/Debug/net8.0/SecondoEsercizio.dll
+/Users/federico/Documents/SecondoEsercizio/bin/Debug/net8.0/SecondoEsercizio.pdb
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.GeneratedMSBuildEditorConfig.editorconfig
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.AssemblyInfoInputs.cache
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.AssemblyInfo.cs
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.csproj.CoreCompileInputs.cache
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.dll
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/refint/SecondoEsercizio.dll
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.pdb
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/SecondoEsercizio.genruntimeconfig.cache
+/Users/federico/Documents/SecondoEsercizio/obj/Debug/net8.0/ref/SecondoEsercizio.dll

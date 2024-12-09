@@ -1,0 +1,14 @@
+/Users/federico/Documents/PrimoEsercizio/bin/Debug/net8.0/PrimoEsercizio
+/Users/federico/Documents/PrimoEsercizio/bin/Debug/net8.0/PrimoEsercizio.deps.json
+/Users/federico/Documents/PrimoEsercizio/bin/Debug/net8.0/PrimoEsercizio.runtimeconfig.json
+/Users/federico/Documents/PrimoEsercizio/bin/Debug/net8.0/PrimoEsercizio.dll
+/Users/federico/Documents/PrimoEsercizio/bin/Debug/net8.0/PrimoEsercizio.pdb
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.GeneratedMSBuildEditorConfig.editorconfig
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.AssemblyInfoInputs.cache
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.AssemblyInfo.cs
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.csproj.CoreCompileInputs.cache
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.dll
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/refint/PrimoEsercizio.dll
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.pdb
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/PrimoEsercizio.genruntimeconfig.cache
+/Users/federico/Documents/PrimoEsercizio/obj/Debug/net8.0/ref/PrimoEsercizio.dll
