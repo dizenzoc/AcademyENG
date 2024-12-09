@@ -1,0 +1,14 @@
+/Users/federico/Documents/FabbricaDiGiocattoli/bin/Debug/net8.0/FabbricaDiGiocattoli
+/Users/federico/Documents/FabbricaDiGiocattoli/bin/Debug/net8.0/FabbricaDiGiocattoli.deps.json
+/Users/federico/Documents/FabbricaDiGiocattoli/bin/Debug/net8.0/FabbricaDiGiocattoli.runtimeconfig.json
+/Users/federico/Documents/FabbricaDiGiocattoli/bin/Debug/net8.0/FabbricaDiGiocattoli.dll
+/Users/federico/Documents/FabbricaDiGiocattoli/bin/Debug/net8.0/FabbricaDiGiocattoli.pdb
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.GeneratedMSBuildEditorConfig.editorconfig
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.AssemblyInfoInputs.cache
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.AssemblyInfo.cs
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.csproj.CoreCompileInputs.cache
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.dll
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/refint/FabbricaDiGiocattoli.dll
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.pdb
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/FabbricaDiGiocattoli.genruntimeconfig.cache
+/Users/federico/Documents/FabbricaDiGiocattoli/obj/Debug/net8.0/ref/FabbricaDiGiocattoli.dll
