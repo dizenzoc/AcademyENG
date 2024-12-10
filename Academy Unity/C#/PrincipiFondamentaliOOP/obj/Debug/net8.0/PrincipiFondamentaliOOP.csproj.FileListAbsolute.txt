@@ -1,0 +1,15 @@
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/bin/Debug/net8.0/PrincipiFondamentaliOOP
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/bin/Debug/net8.0/PrincipiFondamentaliOOP.deps.json
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/bin/Debug/net8.0/PrincipiFondamentaliOOP.runtimeconfig.json
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/bin/Debug/net8.0/PrincipiFondamentaliOOP.dll
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/bin/Debug/net8.0/PrincipiFondamentaliOOP.pdb
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.GeneratedMSBuildEditorConfig.editorconfig
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.AssemblyInfoInputs.cache
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.AssemblyInfo.cs
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.csproj.CoreCompileInputs.cache
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.sourcelink.json
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.dll
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/refint/PrincipiFondamentaliOOP.dll
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.pdb
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/PrincipiFondamentaliOOP.genruntimeconfig.cache
+/Users/federico/Documents/GitHub/AcademyENG/Academy Unity/C#/PrincipiFondamentaliOOP/obj/Debug/net8.0/ref/PrincipiFondamentaliOOP.dll
